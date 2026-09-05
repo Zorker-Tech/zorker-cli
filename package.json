@@ -1,0 +1,42 @@
+{
+  "name": "@zorker/cli",
+  "version": "0.0.1",
+  "description": "Zorker command-line interface for Hydite public project APIs",
+  "keywords": [
+    "zorker",
+    "hydite",
+    "cli",
+    "oauth",
+    "api"
+  ],
+  "homepage": "https://github.com/Zorker-Tech/zorker-cli#readme",
+  "bugs": {
+    "url": "https://github.com/Zorker-Tech/zorker-cli/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zorker-Tech/zorker-cli.git"
+  },
+  "type": "module",
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "bin": {
+    "hydite": "bin/hydite.mjs",
+    "zorker": "bin/hydite.mjs"
+  },
+  "scripts": {
+    "build": "node --check bin/hydite.mjs && node --check src/core.mjs",
+    "test": "node --test test/*.test.mjs",
+    "prepack": "npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0"
+}
