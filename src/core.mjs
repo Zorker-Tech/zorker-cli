@@ -74,7 +74,7 @@ export function normalizePublicPath(value) {
 }
 
 export function buildAuthorizeUrl({ baseUrl, scopes, state, challenge }) {
-  const url = new URL("/oauth/authorize", baseUrl);
+  const url = new URL("/zorker/authorize", baseUrl);
   url.search = new URLSearchParams({
     client_id: CLI_CLIENT_ID,
     response_type: "code",

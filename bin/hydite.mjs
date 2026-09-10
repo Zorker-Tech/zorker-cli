@@ -132,7 +132,7 @@ async function waitForAuthorization(expectedState) {
         return;
       }
       response.writeHead(200, { "content-type": "text/plain; charset=utf-8" });
-      response.end("VTSLX AO CLI is authorized. You may close this window.");
+      response.end("Zorker CLI is authorized. You may close this window.");
       clearTimeout(timeout);
       server.close();
       resolve(code);
@@ -165,7 +165,7 @@ async function login(flags) {
   const state = crypto.randomUUID();
   const callback = waitForAuthorization(state);
   const authorizeUrl = buildAuthorizeUrl({ baseUrl, scopes, state, challenge });
-  process.stdout.write(`Opening Studio authorization…\n${authorizeUrl}\n`);
+  process.stdout.write(`Opening Zorker authorization…\n${authorizeUrl}\n`);
   openBrowser(authorizeUrl);
   const code = await callback;
   const tokens = await exchangeToken(baseUrl, {

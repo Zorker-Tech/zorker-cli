@@ -41,7 +41,7 @@ test("builds an OAuth 2.1 PKCE authorization URL", () => {
       challenge: "challenge",
     }),
   );
-  assert.equal(url.pathname, "/oauth/authorize");
+  assert.equal(url.pathname, "/zorker/authorize");
   assert.equal(url.searchParams.get("client_id"), "hydite-cli");
   assert.equal(url.searchParams.get("scope"), "openid browser:run");
   assert.equal(url.searchParams.get("code_challenge_method"), "S256");
